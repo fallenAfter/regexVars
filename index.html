@@ -13,12 +13,8 @@
 	<script>
 	var input = document.getElementById('input');
 	var output = document.getElementById('output');
-	input.addEventListener('click', function(){
-		output.innerHTML= '';
-	})
-	input.addEventListener('change', function(){
-		console.log(input.value);
-		console.log(regEmail);
+
+	function updateInput (){
 		if (regEmail.test(input.value)){
 			output.innerHTML= "Email";
 		}
@@ -28,6 +24,12 @@
 		else{
 			output.innerHTML= "Nothing";
 		}
+	}
+
+	updateInput();
+
+	input.addEventListener('input', function(){
+		updateInput();
 	})
 	</script>
 </body>
