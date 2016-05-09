@@ -9,5 +9,23 @@
 <body>
 	<label for="input">Input</label>
 	<input type="text" name="input" id="input">
+	<output id="output"></output>
+	<script>
+	var input = document.getElementById('input');
+	var output = document.getElementById('output');
+	input.addEventListener('click', function(){
+		output.innerHTML= '';
+	})
+	input.addEventListener('change', function(){
+		console.log(input.value);
+		console.log(regEmail);
+		if (regEmail.test(input.value)){
+			output.innerHTML= "Email";
+		}
+		else{
+			output.innerHTML= "Nothing";
+		}
+	})
+	</script>
 </body>
 </html>
